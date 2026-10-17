@@ -32,3 +32,15 @@ update expense_claims
 set CLAIMED_AMOUNT = -10000
 where claim_id = 'CLM004'
 ;
+
+select 
+    claim_id,
+    employee_id,
+    claim_date,
+    upper(expense_type) as expense_type,
+    claimed_amount,
+    currency,
+    lower(approval_status) as approval_status,
+    approver_id
+from raw.public.expense_claims
+;
