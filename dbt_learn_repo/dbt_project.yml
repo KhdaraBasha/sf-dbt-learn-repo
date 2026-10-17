@@ -32,7 +32,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_learn_repo:
     # Config indicated by + and applies to all files under models/example/
+    # Appliees to all files under models/example/
     example:
       +materialized: view
+
     staging:
+      +database: SILVER_DB
+      +schema: STAGING  # Force STAGING as your schema, Staging layer
       +materialized: view
+    
+    cleansing:
+      +database: SILVER_DB  # Force SILVER_DB as your database, Final / Cleaning layer
+      +schema: CLEANING  # Force final as your schema, Final / Cleaning layer
+      +materialized: table
