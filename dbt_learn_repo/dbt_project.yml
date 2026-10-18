@@ -45,3 +45,8 @@ models:
       +database: SILVER_DB  # Force SILVER_DB as your database, Final / Cleaning layer
       +schema: CLEANING  # Force final as your schema, Final / Cleaning layer
       +materialized: table
+    
+    snowflake_dt:
+      +database: SNOWFLAKE_DT  # Force SILVER_DB as your database, Final / Cleaning layer
+      +schema: TRANSFORM_DT  # Force final as your schema, Final / Cleaning layer
+      +materialized: table
